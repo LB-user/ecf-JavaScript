@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>My Music App</title>
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="container container-header">
+            <img src="img/logo.png" alt="Logo">
+            <h1>My Music App</h1>
+        </div>
+        <div class="container container-form">
+            <form>
+                <div class="input-search">
+                    <label for="text">Entrez la recherche :</label>
+                    <input id="input" type="text">
+                </div>
+                <select name="select" id="select">
+                    <option value="everything">Everything</option>
+                    <option value="artist">Artist</option>
+                    <option value="title">Title</option>
+                    <option value="album">Album</option>
+                </select>
+                <button id="button-search">Rechercher</button>
+            </form>
+            <hr>
+            <article class="buttons-article">
+                <div class="container-search">
+
+                </div>
+            </article>
+        </div>
+    </header>
+    <main>
+        <section class="section-elements">
+            <div class="container container-elements">
+                <div class="general-list">
+                    <article class="list-titles">
+                        <ul class="list-elements">
+                            <li class="list-elements-items">
+                                <h2>Ligne</h2>
+                            </li>
+                            <li class="list-elements-items">
+                                <h2>Artiste</h2>
+                            </li>
+                            <li class="list-elements-items">
+                                <h2>Titre</h2>
+                            </li>
+                            <li class="list-elements-items">
+                                <h2>Album</h2>
+                            </li>
+                            <li class="list-elements-items">
+                                <h2>Descriptifs</h2>
+                            </li>
+                        </ul>
+                        <hr>
+                    </article>
+                    <article class="ring" hidden>
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </article>
+                    <article>
+                        <ul class="search-list">
+
+                        </ul>
+                    </article>
+                    <article class="list-item to-remove">
+                        <p>Entrez un élément de recherche</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <aside class="modale" aria-hidden="true" role="dialog" aria-labelledby="h2-modale" id="modale" hidden>
+            <div class="container-modale">
+                <header class="header-modale">
+                    <h2 class="h2-modale"></h2>
+                </header>
+                <article>
+                    <h3>INFORMATIONS</h3>
+                    <ul>
+                        <li>
+                            <h4>Title - </h4>
+                            <p class="p-title"></p>
+                        </li>
+                        <li>
+                            <h4>Artist - </h4>
+                            <p class="p-artist"></p>
+                        </li>
+                        <li>
+                            <h4>Album - </h4>
+                            <p class="p-album"></p>
+                        </li>
+                        <li>
+                            <h4>Genre - </h4>
+                            <p class="p-genre"></p>
+                        </li>
+                        <li>
+                            <h4>Length - </h4>
+                            <p class="p-length"></p>
+                        </li>
+                        <li class="list-notes">
+                            <div>
+                                <h4>Note - </h4>
+                                <svg style="display:none;">
+                                    <defs>
+                                        <symbol id="fivestars">
+                                            <path
+                                                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                fill="aliceblue" fill-rule="evenodd" />
+                                            <path
+                                                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                fill="aliceblue" fill-rule="evenodd" transform="translate(24)" />
+                                            <path
+                                                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                fill="aliceblue" fill-rule="evenodd" transform="translate(48)" />
+                                            <path
+                                                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                fill="aliceblue" fill-rule="evenodd" transform="translate(72)" />
+                                            <path
+                                                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24"
+                                                fill="aliceblue" fill-rule="evenodd" transform="translate(96)" />
+                                        </symbol>
+                                    </defs>
+                                </svg>
+                                <div class="rating">
+                                    <!--   <div class="rating-bg" style="width: 90%;"></div> -->
+                                    <progress class="rating-bg" value="0" max="5"></progress>
+                                    <svg>
+                                        <use xlink:href="#fivestars" />
+                                    </svg>
+                                </div>
+                                <p class="nb-notes"></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3>Cover arts</h3>
+                    <ul class="cover-list">
+
+                    </ul>
+
+                </article>
+            </div>
+        </aside>
+    </main>
+    <script src="modale.js"></script>
+    <script src="liste.js"></script>
+    <script src="nav.js"></script>
+    <script src="api.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
